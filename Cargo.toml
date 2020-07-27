@@ -3,6 +3,13 @@ name = "brittle"
 version = "0.1.0"
 authors = ["ZippyMagician <zippymagician1@gmail.com>"]
 edition = "2018"
+license = "Apache-2.0"
+
+readme = "README.md"
+description = "Simple TOML parser in Rust"
+repository = "https://github.com/ZippyMagician/brittle"
+
+keywords = ["toml", "parser"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
