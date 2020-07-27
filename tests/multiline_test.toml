@@ -1,0 +1,5 @@
+[main]
+count = 0.75
+
+    [main.child]
+    count = 0.5
