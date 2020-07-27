@@ -51,7 +51,7 @@ pub(crate) fn parse(stream: Vec<Vec<Token>>) -> Vec<TOML> {
 
 // Head parse, parses the line (handles assignments and tags)
 // Will call child parser to handle the values being handed to an object
-fn parse_head<'a>(line: Vec<Token>) -> Option<TOML> {
+fn parse_head(line: Vec<Token>) -> Option<TOML> {
     for (index, tok) in line.clone().iter().enumerate() {
         match tok {
             Token::Punctuation(value) => {
@@ -98,7 +98,7 @@ fn parse_head<'a>(line: Vec<Token>) -> Option<TOML> {
 
 // Handles the parsing of all Value tokens (string, int, float, date, etc)
 // Returns that for use by the parent parser
-fn parse_child<'a>(tokens: Vec<Token>) -> (Value, usize) {
+fn parse_child(tokens: Vec<Token>) -> (Value, usize) {
     let head = tokens.get(0);
     // Invalid assignment
     if head == None {
@@ -205,7 +205,7 @@ fn parse_child<'a>(tokens: Vec<Token>) -> (Value, usize) {
     empty!()
 }
 
-fn goto<'a>(tokens: Vec<Token>, start: Token, end: Token) -> Option<usize> {
+fn goto(tokens: Vec<Token>, start: Token, end: Token) -> Option<usize> {
     let mut pointer: usize = 0;
     let mut count = 0;
     for item in tokens {

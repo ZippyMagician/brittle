@@ -6,6 +6,6 @@ pub(crate) mod date;
 
 pub(crate) mod table;
 
-pub fn parse<'a>(code: String) -> Vec<parser::TOML> {
+pub fn parse(code: String) -> Vec<parser::TOML> {
     parser::parse(tokenizer::tokenize(&*code))
 }
