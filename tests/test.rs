@@ -45,8 +45,8 @@ fn multiline_test() {
 
 fn read_file(path: &str) -> std::io::Result<String> {
     let file = File::open(path)?;
-    let mut buffer = BufReader::with_capacity(128 * 1024, file);
-    let mut lines = buffer
+    let buffer = BufReader::with_capacity(128 * 1024, file);
+    let lines = buffer
         .lines()
         .map(|x| x.unwrap_or("".to_string()))
         .collect::<Vec<String>>();
