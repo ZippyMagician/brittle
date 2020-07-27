@@ -186,7 +186,7 @@ fn parse_child(tokens: Vec<Token>) -> (Value, usize) {
                             // Something went wrong
                             eprint!("Something went wrong parsing: {:?}", slice);
                         }
-                        slice = slice[(next + 1)..].into();
+                        slice = slice[next..].into();
                     }
 
                     return (Value::Table(hash), pos);
